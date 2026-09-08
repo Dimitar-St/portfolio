@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { portfolio } from "@/app/data/portfolio";
 import { CloseIcon, MenuIcon } from "@/components/icons";
@@ -46,9 +47,15 @@ export function Nav() {
         <a
           href="#home"
           onClick={close}
-          className="text-[0.95rem] font-semibold tracking-tight text-white"
+          className="flex items-center gap-2"
         >
-          {profile.name}
+          <Image
+            src="/logo.png"
+            alt={profile.name}
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full object-cover"
+          />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
