@@ -73,7 +73,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="justify-self-start lg:justify-self-end">
+            <div className="justify-self-center lg:justify-self-end">
               <Image
                 src={profile.photo}
                 alt={`Portrait of ${profile.name}`}
