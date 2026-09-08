@@ -213,7 +213,7 @@ export const portfolio: Portfolio = {
       "I'm available for remote contract, part-time, and project-based engineering work.",
       "If your team needs help with backend development, data modeling, system integrations, developer tooling, or full-stack product development, feel free to get in touch.",
     ],
-    email: "dimitar.stoyanov@example.com",
+    email: "stoyanov.dimi.tri@gmail.com",
     ctaLabel: "Email me",
   },
 
