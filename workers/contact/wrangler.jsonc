@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "portfolio-contact",
+  "main": "index.ts",
+  "compatibility_date": "2026-09-08",
+  "workers_dev": true,
+  "send_email": [{ "name": "emailService" }],
+  "ratelimits": [
+    {
+      "name": "CONTACT_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 5, "period": 60 }
+    }
+  ]
+}

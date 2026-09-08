@@ -54,6 +54,12 @@ export type ContactInfo = {
   copy: string[];
   email: string;
   ctaLabel: string;
+  intentions: {
+    id: string;
+    label: string;
+    description: string;
+    followUp?: { heading: string; options: string[] };
+  }[];
 };
 
 export type Portfolio = {
@@ -210,11 +216,53 @@ export const portfolio: Portfolio = {
   contact: {
     heading: "Have something to build?",
     copy: [
-      "I'm available for remote contract, part-time, and project-based engineering work.",
-      "If your team needs help with backend development, data modeling, system integrations, developer tooling, or full-stack product development, feel free to get in touch.",
+      "Building something new, improving an existing system, or looking for another experienced engineer? Tell me a little about what you’re working on.",
     ],
-    email: "stoyanov.dimi.tri@gmail.com",
-    ctaLabel: "Email me",
+    email: "contact@dimitarstoyanov.dev",
+    ctaLabel: "Start a conversation",
+    intentions: [
+      {
+        id: "build",
+        label: "Build something new",
+        description: "I have an idea, product, or feature I'd like to build.",
+        followUp: {
+          heading: "Where are you right now?",
+          options: ["Just an idea", "I have requirements or designs", "Something has already been built", "Not sure — I need some guidance"],
+        },
+      },
+      {
+        id: "improve",
+        label: "Improve what we have",
+        description: "We already have something and need help improving or extending it.",
+        followUp: {
+          heading: "What are you looking for?",
+          options: ["Build new features", "Improve reliability or performance", "Help with an existing engineering problem", "Extra engineering capacity", "Not sure yet"],
+        },
+      },
+      {
+        id: "team",
+        label: "Join our team",
+        description: "We're looking for an experienced engineer to work with our team.",
+        followUp: {
+          heading: "What kind of engagement are you looking for?",
+          options: ["Contract", "Part-time", "Full-time opportunity", "Not sure yet"],
+        },
+      },
+      {
+        id: "connect",
+        label: "Connect our systems",
+        description: "We need different systems, services, or tools to work together.",
+        followUp: {
+          heading: "What best describes what you need?",
+          options: ["Connect two existing systems", "Automate a manual process", "Move or synchronize data", "Not sure how it should be built"],
+        },
+      },
+      {
+        id: "other",
+        label: "Something else",
+        description: "None of these quite fit — let's talk about it.",
+      },
+    ],
   },
 
   metadata: {
