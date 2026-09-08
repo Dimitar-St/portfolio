@@ -38,7 +38,7 @@ export function ContactForm() {
     pending.current = true;
     setStatus("sending");
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || "/api/contact", {
+      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || contact.endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

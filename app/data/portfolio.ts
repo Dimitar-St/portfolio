@@ -54,6 +54,7 @@ export type ContactInfo = {
   copy: string[];
   email: string;
   ctaLabel: string;
+  endpoint: string;
   intentions: {
     id: string;
     label: string;
@@ -220,6 +221,7 @@ export const portfolio: Portfolio = {
     ],
     email: "contact@dimitarstoyanov.dev",
     ctaLabel: "Start a conversation",
+    endpoint: "https://portfolio-contact.stoyanov-dimi-tri.workers.dev/api/contact",
     intentions: [
       {
         id: "build",

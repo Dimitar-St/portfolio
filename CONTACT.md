@@ -75,7 +75,10 @@ production list unless intentionally needed.
    manifest configures the rate-limit binding automatically; no KV database is
    needed. Namespace `1001` should be unique among other rate limiters in your
    account; change it if already used.
-5. Set **the website's build environment variable**
+5. The default endpoint is configured centrally in `portfolio.contact.endpoint`.
+   It points to `https://portfolio-contact.stoyanov-dimi-tri.workers.dev/api/contact`,
+   so a build variable is not required for this deployment. To override it, set
+   **the website's build environment variable**
    `NEXT_PUBLIC_CONTACT_ENDPOINT=https://portfolio-contact.<your-subdomain>.workers.dev/api/contact`
    using the actual URL Wrangler prints. Rebuild/redeploy the website using its
    existing pipeline. This public URL is the only client-side environment value.
@@ -83,7 +86,7 @@ production list unless intentionally needed.
 6. Test an actual submission from the production website and check delivery.
 
 Alternatively, configure a Cloudflare route for `/api/contact` to this Worker and
-omit the public endpoint variable; the frontend defaults to that same-origin path.
+set the public endpoint variable to `/api/contact` before rebuilding.
 The standalone workers.dev URL is simplest when the website's hosting setup is
 managed elsewhere. No route is created automatically by this change.
 
